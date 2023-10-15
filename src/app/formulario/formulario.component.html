@@ -9,15 +9,15 @@
         <br>
     
         <div class="form-group mb-3">
-          <label for="nombreCompleto">Nombre Completo </label>
-          <input type="text" id="nombreCompleto" formControlName="nombreCompleto" class="form-control" [class.is-invalid]="nombreCompletoNoValido">
+          <label for="nombreCompleto" style="font-weight: bold; color: #494C48;">Nombre Completo </label>
+          <input type="text" id="nombreCompleto" formControlName="nombreCompleto"  class="form-control" [class.is-invalid]="nombreCompletoNoValido">
           <small *ngIf="nombreCompletoNoValido" class="text-danger">
             Requerido (max 100 caracteres)
           </small>
         </div>
         
         <div class="form-group mb-3">
-          <label for="nombreEmpresa">Nombre de la empresa </label>
+          <label for="nombreEmpresa" style="font-weight: bold; color: #494C48;" >Nombre de la empresa </label>
           <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa" class="form-control" [class.is-invalid]="nombreEmpresaNoValido">
           <small *ngIf="nombreEmpresaNoValido" class="text-danger">
             Requerido (max 100 caracteres)
@@ -25,7 +25,7 @@
         </div>
     
         <div class= "form-group mb-3">
-          <label for="correo">Correo electrónico </label>
+          <label for="correo" style="font-weight: bold; color: #494C48;">Correo electrónico </label>
           <input type="text" id="correo" formControlName="correo" class="form-control" [class.is-invalid]="correoNoValido">
           <small *ngIf="correoNoValido" class="text-danger">
              correo no debe poseer caracteres especiales.
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <label for="telefono">Teléfono </label>
+                <label for="telefono" style="font-weight: bold; color: #494C48;">Teléfono </label>
                 <input type="telefono" id="telefono" formControlName="telefono" class="form-control" [class.is-invalid]="telefonoNoValido">
                 <small *ngIf="telefonoNoValido" class="text-danger">
                  El número de dígitos es incorrecto.
@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group mb-3">
-                <label for="cat">Categoría</label>
+                <label for="cat" style="font-weight: bold; color: #494C48;">Categoría </label>
               <select name="categoria" id="cat"  class="form-control" [class.is-invalid]="categoriaNoValida" formControlName="categoria">
               <option value="" disabled></option>
               <option value="facturación">Facturación</option>
@@ -63,7 +63,7 @@
         </div>
     
         <div class="form-group mb-3">
-          <label for="msg">Mensaje</label>
+          <label for="msg" style="font-weight: bold; color: #494C48;">Mensaje</label>
           <textarea id="msg" formControlName="msg" class="form-control" [class.is-invalid]="mensajeNoValido" placeholder="Escriba su mensaje"></textarea>
           <small *ngIf="mensajeNoValido" class="text-danger">
               Requerido (máximo 300 caracteres)
@@ -72,7 +72,11 @@
         </div>
     
         
-        <button type="submit" class="btn btn-primary">Enviar</button>
+
+        
+        <button type="submit" class="btn" style="background-color: #60F72B; color: #fff;">Enviar</button>
+
+
         
       </form>
       
