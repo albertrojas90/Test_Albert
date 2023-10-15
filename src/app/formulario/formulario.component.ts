@@ -20,7 +20,7 @@ export class FormularioComponent {
       correo: ['', [ Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')] ],
       telefono: ['', [ Validators.required, Validators.compose([Validators.minLength(10),Validators.maxLength(10)]), Validators.pattern('^[0-9]+$') ]  ],
       categoria:['',[ Validators.required]],
-      msg: ['', [Validators.required, Validators.maxLength(500)]]
+      msg: ['', [Validators.required, Validators.maxLength(300)]]
 
     });
   }

@@ -1,0 +1,13 @@
+.contacto{
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    padding: 5px;
+    
+}
+.contacto h1{
+    color: floralwhite;
+    font-weight: bolder;
+
+}

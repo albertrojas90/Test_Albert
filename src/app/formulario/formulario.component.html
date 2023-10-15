@@ -1,61 +1,84 @@
-<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
 
+      <form [formGroup]="miFormulario" (ngSubmit)="guardar()" class="my-9">
+        <div class="contacto">
+          <h1>Contacto de soporte !</h1>
+        </div>
+        <br>
+    
+        <div class="form-group mb-3">
+          <label for="nombreCompleto">Nombre Completo </label>
+          <input type="text" id="nombreCompleto" formControlName="nombreCompleto" class="form-control" [class.is-invalid]="nombreCompletoNoValido">
+          <small *ngIf="nombreCompletoNoValido" class="text-danger">
+            Requerido (max 100 caracteres)
+          </small>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="nombreEmpresa">Nombre de la empresa </label>
+          <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa" class="form-control" [class.is-invalid]="nombreEmpresaNoValido">
+          <small *ngIf="nombreEmpresaNoValido" class="text-danger">
+            Requerido (max 100 caracteres)
+          </small>
+        </div>
+    
+        <div class= "form-group mb-3">
+          <label for="correo">Correo electrónico </label>
+          <input type="text" id="correo" formControlName="correo" class="form-control" [class.is-invalid]="correoNoValido">
+          <small *ngIf="correoNoValido" class="text-danger">
+             correo no debe poseer caracteres especiales.
+          </small>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="telefono">Teléfono </label>
+                <input type="telefono" id="telefono" formControlName="telefono" class="form-control" [class.is-invalid]="telefonoNoValido">
+                <small *ngIf="telefonoNoValido" class="text-danger">
+                 El número de dígitos es incorrecto.
+                </small>
+              </div>       
+    
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mb-3">
+                <label for="cat">Categoría</label>
+              <select name="categoria" id="cat"  class="form-control" [class.is-invalid]="categoriaNoValida" formControlName="categoria">
+              <option value="" disabled></option>
+              <option value="facturación">Facturación</option>
+              <option value="soporte">Soporte técnico</option>
+              <option value="ventas">Ventas</option>
+              <option value="informacion">Información general</option>
+              </select>
+              <small *ngIf="categoriaNoValida" class="text-danger">
+                Campo obligatorio
+              </small>
+            </div>
+              
+            </div>
+    
+        </div>
+    
+        <div class="form-group mb-3">
+          <label for="msg">Mensaje</label>
+          <textarea id="msg" formControlName="msg" class="form-control" [class.is-invalid]="mensajeNoValido" placeholder="Escriba su mensaje"></textarea>
+          <small *ngIf="mensajeNoValido" class="text-danger">
+              Requerido (máximo 300 caracteres)
+          </small>
+    
+        </div>
+    
+        
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        
+      </form>
+      
 
-    <label for="nombreCompleto">Nombre Completo </label>
-    <input type="text" id="nombreCompleto" formControlName="nombreCompleto" [class.is-invalid]="nombreCompletoNoValido">
-    <small *ngIf="nombreCompletoNoValido" class="text-danger">
-      Requerido (max 100 caracteres)
-    </small>
-    <br>
-    <br>
+    </div>
 
-    <label for="nombreEmpresa">Nombre de la empresa </label>
-    <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa" [class.is-invalid]="nombreEmpresaNoValido">
-    <small *ngIf="nombreEmpresaNoValido" class="text-danger">
-      Requerido (max 100 caracteres)
-    </small>
-    <br>
-    <br>
+  </div>
 
-    <label for="correo">Correo electrónico </label>
-    <input type="text" id="correo" formControlName="correo" [class.is-invalid]="correoNoValido">
-    <small *ngIf="correoNoValido" class="text-danger">
-       correo no debe poseer caracteres especiales.
-    </small>
-    <br>
-    <br>
-
-    <label for="telefono">Teléfono </label>
-    <input type="telefono" id="telefono" formControlName="telefono" [class.is-invalid]="telefonoNoValido">
-    <small *ngIf="telefonoNoValido" class="text-danger">
-       El número de dígitos es incorrecto.
-    </small>
-    <br>
-    <br>
-
-    <label for="cat">Categoría</label>
-    <select name="categoria" id="cat" [class.is-invalid]="categoriaNoValida" formControlName="categoria">
-    <option value="" disabled></option>
-    <option value="facturación">Facturación</option>
-    <option value="soporte">Soporte técnico</option>
-    <option value="ventas">Ventas</option>
-    <option value="informacion">Información general</option>
-    </select>
-    <small *ngIf="categoriaNoValida" class="text-danger">
-      Campo obligatorio
-    </small>
-    <br>
-    <br>
-
-  <label for="msg">Mensaje</label>
-  <textarea id="msg" formControlName="msg"  [class.is-invalid]="mensajeNoValido" placeholder="Escriba su mensaje"></textarea>
-  <small *ngIf="mensajeNoValido" class="text-danger">
-      Requerido (máximo 00 caracteres)
-  </small>
-  <br>
-  <br>
-
-
-    <button type="submit">Enviar</button>
-  </form>
-  
+</div>
